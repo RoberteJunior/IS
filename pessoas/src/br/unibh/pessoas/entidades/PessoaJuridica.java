@@ -2,7 +2,7 @@ package br.unibh.pessoas.entidades;
 
 import java.util.Date;
 
-public class PessoaJuridica 
+public class PessoaJuridica extends Pessoa
 {
 	
 	private String cnpj;
@@ -10,7 +10,15 @@ public class PessoaJuridica
 	private String site;
 	
 	
-	
+	public PessoaJuridica(Long id, String nome, String endereco, String telefone, String cnpj, String site,
+			Date dataConstituicao) 
+	{
+		super(id, nome, endereco, telefone);
+		this.cnpj = cnpj;
+		this.site = site;
+		this.dataConstituicao = dataConstituicao;
+						
+	}
 	
 	public String getCnpj() 
 	{
@@ -51,6 +59,10 @@ public class PessoaJuridica
 		this.site = site;
 	}
 	
-	
+	@Override
+	public String toString() 
+	{
+		return "PessoaJuridica [cnpj=" + cnpj + ", site=" + site + ", dataConstituicao=" + dataConstituicao + ", toString()=" + super.toString() + "]";
+	}
 
 }

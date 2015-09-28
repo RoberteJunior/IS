@@ -126,8 +126,7 @@ public class PessoaFisicaDAO implements DAO<PessoaFisica, Long> {
 	public void delete(PessoaFisica t) {
 		// TODO Auto-generated method stub
 		try {
-			PreparedStatement p = JDBCUtil.getConnection().prepareStatement(
-					"delete from tb_pessoa_fisica where id = ?");
+			PreparedStatement p = JDBCUtil.getConnection().prepareStatement("delete from tb_pessoa_fisica where id = ?");
 			p.setLong(1, t.getId());
 			p.executeUpdate();
 		} catch (Exception e) {
